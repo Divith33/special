@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Sweet Akka 💖</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(to bottom right,#ffd6e7,#fff5f8);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  overflow:hidden;
+}
+
+.page{
+  position:absolute;
+  text-align:center;
+  transition:1s;
+}
+
+/* Intro Page */
+#introPage img{
+  width:180px;
+  height:180px;
+  border-radius:20%;
+  object-fit:cover;
+  border:5px solid #ff4f87;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+#introPage h1{
+  color:#ff4f87;
+  margin-top:15px;
+}
+
+button{
+  margin-top:15px;
+  padding:10px 20px;
+  border:none;
+  background:#ff4f87;
+  color:white;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:16px;
+}
+
+button:hover{
+  background:#ff2f70;
+}
+
+/* Letter Page hidden first */
+#letterPage{
+  display:none;
+}
+
+/* Envelope */
+.envelope{
+  position:relative;
+  width:300px;
+  height:200px;
+  background:#ff6f91;
+  border-radius:10px;
+  box-shadow:0 10px 20px rgba(0,0,0,0.2);
+}
+
+.envelope:before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  border-left:150px solid transparent;
+  border-right:150px solid transparent;
+  border-top:100px solid #ff8fab;
+  transform-origin:top;
+  transition:0.6s;
+  z-index:2;
+}
+
+.letter{
+  position:absolute;
+  width:260px;
+  height:160px;
+  background:white;
+  top:20px;
+  left:20px;
+  border-radius:8px;
+  padding:10px;
+  box-sizing:border-box;
+  text-align:center;
+  transform:translateY(100%);
+  transition:0.1s;
+  z-index:1;
+}
+
+/* Open animation */
+.envelope.open:before{
+  transform:rotateX(180deg);
+}
+
+.envelope.open .letter{
+  transform:translateY(-20px);
+}
+
+.letter h2{
+  color:#ff4f87;
+  font-size:16px;
+}
+
+.letter p{
+  font-size:14px;
+  color:#444;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Intro Page -->
+<div id="introPage" class="page">
+  <img src="IMG-20260328-WA0063.jpg" alt="My Sweet Akka">
+  <h1>En life la oru special place irukku
+andha idathula irukkaradhu nee dhaan ka 💕
+Nee en akka mattum illa<br>
+en strength, en support, en safe place 🫶<br>
+Inniku unakkaga oru chinna surprise
+click pannunga ka 💌✨</h1>
+  <button onclick="goToLetter()">Open Your Surprise 💌</button>
+</div>
+
+<!-- Letter Page -->
+<div id="letterPage" class="page">
+  <div class="envelope" id="envelope">
+    <div class="letter">
+      <h2>Happy Mother’s Day Akka 💕</h2>
+      <p>
+Unna akka nu koopdura podhum romba simple ah irukum
+aana en life la nee panra role simple illa ka.
+
+Naan epdi irundhaalum nee en pakkathula dhaan irupa.
+Naan konjam over ah pesinalum, konjam thappa nadandhaalum,
+nee adha perusa eduthukama,enna correct pannitu dhaan pesuva 
+
+Parava illa naan iruken nu nee sollra podhu,
+enakku bayam ellam konjam kuraiyum.
+
+Enakku neraya per life la irukaanga
+aana un maari yaarum illa.
+Un presence dhaan enakku nimmadhi
+
+Nee en akka dhaan
+aana enakku nee konjam amma maari dhaan iruka 🌸
+
+Love you ka ❤️
+Un thambi eppovum un side la dhaan 🫶
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+function goToLetter(){
+  document.getElementById("introPage").style.display="none";
+  document.getElementById("letterPage").style.display="block";
+
+  // Automatically open envelope after 500ms
+  setTimeout(function(){
+    document.getElementById("envelope").classList.add("open");
+  },500);
+}
+</script>
+
+</body>
+</html>
